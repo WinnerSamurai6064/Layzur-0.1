@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+@theme {
+  --color-orange-primary: #ff6b00;
+  --color-glass-bg: rgba(0, 0, 0, 0.6);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black/60 backdrop-blur-2xl border border-white/10;
+  }
+  
+  .glass-thick {
+    @apply bg-black/80 backdrop-blur-3xl border border-white/20;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+
+  .neon-orange {
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(255, 107, 0, 0.4);
+  }
+
+  .orange-glow {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+  }
+}
+
+/* Custom scrollbar for glass aesthetic */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 0, 0.5);
+}
